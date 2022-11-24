@@ -7,6 +7,15 @@
 /* "https://user-images.githubusercontent.com/97456472/203743934-d7d10a61-2c80-45ae-abd4-047970fd0599.jpg"  */
 /* "https://user-images.githubusercontent.com/97456472/203770687-0372fb7d-03ca-4d72-9a94-f6a1813b40f5.jpg"  */
 
+.Start_Game {
+  height: 100vh;
+  /* display: flex; */
+  background: linear-gradient(rgba(255, 0, 0, 0.1),
+      rgba(255, 255, 255, 0.1),
+      rgba(0, 255, 60, 0.1)),
+    url("https://user-images.githubusercontent.com/97456472/203770687-0372fb7d-03ca-4d72-9a94-f6a1813b40f5.jpg") center;
+}
+
 .App {
   height: 100vh;
   display: flex;
@@ -37,8 +46,6 @@
 }
 
 .moneyListItem {
-
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -175,4 +182,54 @@
   100% {
     background: red;
   }
+}
+
+.endText {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+/* Start  */
+.start {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 47px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.startInput {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.startInput:focus {
+  outline: none;
+}
+
+.startButton {
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
 }
