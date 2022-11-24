@@ -2,15 +2,23 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import play from "../assets/sounds/start_play.mp3";
+import checking from "../assets/sounds/waiting.mp3";
 import correct from "../assets/sounds/correct_answer.mp3";
 import wrong from "../assets/sounds/wrong_answer.mp3";
 
-const Trivia = ({ tiviaData, setStop, questionNumber, setQuestionNumber }) => {
+const Trivia = ({
+  tiviaData,
+  setStopTime,
+  questionNumber,
+  setQuestionNumber,
+}) => {
   const [question, setQuestion] = useState(null);
   const [selectAnswer, setSelectAnswer] = useState(null);
   const [mclassName, setMclassName] = useState("answers");
 
   const [letplay] = useSound(play);
+
+  const [waiting] = useSound(checking);
   const [correctAnswer] = useSound(correct);
   const [wrongAnswer] = useSound(wrong);
 
@@ -30,15 +38,16 @@ const Trivia = ({ tiviaData, setStop, questionNumber, setQuestionNumber }) => {
 
   const handleCheck = (x) => {
     // console.log(x);
+    waiting();
 
     setSelectAnswer(x);
     setMclassName("answers active");
 
-    delay(3000, () =>
+    delay(3000, () => {
       setMclassName(
         question?.answers[x].correct ? "answers correct" : "answers wrong"
-      )
-    );
+      );
+    });
 
     delay(5000, () => {
       if (question.answers[x].correct) {
@@ -52,7 +61,7 @@ const Trivia = ({ tiviaData, setStop, questionNumber, setQuestionNumber }) => {
         wrongAnswer();
 
         delay(1000, () => {
-          setStop(true);
+          setStopTime(true);
         });
       }
     });

@@ -8,7 +8,7 @@ import tiviaData from "./tiviaData";
 
 function App() {
   const [username, setUsername] = useState(null);
-  const [stop, setStop] = useState(false);
+  const [stopTime, setStopTime] = useState(false);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [earned, setEarned] = useState("₹ 0");
 
@@ -44,18 +44,21 @@ function App() {
       ) : (
         <>
           <div className="Main">
-            {stop ? (
+            {stopTime ? (
               <h1 className="endText"> You earned {earned}</h1>
             ) : (
               <>
                 <div className="top">
                   <div className="timer">
-                    <Timer setStop={setStop} questionNumber={questionNumber} />
+                    <Timer
+                      setStopTime={setStopTime}
+                      questionNumber={questionNumber}
+                    />
                   </div>
                 </div>
                 <div className="bottom">
                   <Trivia
-                    setStop={setStop}
+                    setStopTime={setStopTime}
                     tiviaData={tiviaData}
                     questionNumber={questionNumber}
                     setQuestionNumber={setQuestionNumber}
