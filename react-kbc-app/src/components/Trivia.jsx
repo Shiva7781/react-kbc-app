@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import useSound from "use-sound";
 import play from "../assets/sounds/start_play.mp3";
-import checking from "../assets/sounds/waiting.mp3";
+import checking from "../assets/sounds/waiting-[AudioTrimmer.com].mp3";
 import correct from "../assets/sounds/correct_answer.mp3";
 import wrong from "../assets/sounds/wrong_answer.mp3";
 
