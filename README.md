@@ -15,7 +15,7 @@
 
 ## Features:
 
-- Sounds Implemented :- Start, Waiting, Correct Answers, Wrong Answer.
+- Sounds Implemented :- Start, Waiting, Correct Answer, Wrong Answer.
 - On correct answer jump to next question.
 - On wrong answer prize money will be given whatever amount earned till last question.
 
